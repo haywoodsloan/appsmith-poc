@@ -744,6 +744,7 @@
                       ],
                       "labelPosition": "Auto",
                       "labelStyle": "BOLD",
+                      "labelTextColor": "transparent",
                       "inputType": "TEXT",
                       "placeholderText": "New Todo Name",
                       "isDisabled": "{{Todos.isSubmitting()}}",
