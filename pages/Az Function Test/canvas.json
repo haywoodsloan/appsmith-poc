@@ -178,7 +178,7 @@
               "isDisabled": "{{ReverseEcho.isSubmitting() || !ReverseInput.text.length}}",
               "key": "30gnx4sqx0",
               "isDeprecated": false,
-              "rightColumn": 32,
+              "rightColumn": 33,
               "isDefaultClickDisabled": true,
               "widgetId": "f06ukxjcl0",
               "isVisible": true,

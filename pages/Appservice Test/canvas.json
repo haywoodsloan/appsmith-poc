@@ -365,7 +365,7 @@
                               "text": "{{currentItem.name}}",
                               "key": "rzw0hvp0gm",
                               "isDeprecated": false,
-                              "rightColumn": 53,
+                              "rightColumn": 54,
                               "textAlign": "LEFT",
                               "widgetId": "6xw8aqqlq2",
                               "logBlackList": {
@@ -442,7 +442,7 @@
                                   "key": "onClick"
                                 }
                               ],
-                              "leftColumn": 54,
+                              "leftColumn": 55,
                               "dynamicBindingPathList": [],
                               "text": "Delete",
                               "isDisabled": false,
