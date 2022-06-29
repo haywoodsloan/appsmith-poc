@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Todos",
+    "pageId": "Appservice Test",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tisSubmitting: () => appsmith.store.todoSubmitting,\n\tgetTodos: () => GET_Todos.data.sort((a, b) => a.id - b.id),\n\t\n\tinitState: () => {\n\t\tstoreValue('todoSubmitting', false, false);\n\t},\n\t\n\taddTodo: async () => {\n\t\tconst name = NewTodoInput.text;\n\t\tif (!name || Todos.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('todoSubmitting', true, false);\n\t\t\tawait POST_Todo.run({name});\n\t\t\t\n\t\t\tawait resetWidget('NewTodoInput');\n\t\t\tawait GET_Todos.run();\n\t\t} finally {\n\t\t\tawait storeValue('todoSubmitting', false, false);\n\t\t}\n\t},\n\t\n\t// Buttons nested in lists can't be async yet, \n\t// so we use the old callback syntax here\n\tdeleteTodo: () => {\n\t\t// Passing the id from the delete button causes errors \n\t\t// if there's certain characters in the currentItem's name\n\t\t// workaround is to use the selectedItem instead\n\t\tconst id = TodoList.selectedItem.id;\n\t\tDELETE_Todo.run(() => GET_Todos.run(), () => {}, {id});\n\t}\n}",
+    "variables": []
+  },
+  "id": "Appservice Test_Todos",
+  "deleted": false,
+  "gitSyncId": "62bb1fd10d629f38792c20a0_62bb59fa0d629f38792c20e9"
+}

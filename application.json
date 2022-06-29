@@ -1,0 +1,27 @@
+{
+  "pages": [
+    {
+      "id": "Appservice Test",
+      "isDefault": true
+    },
+    {
+      "id": "Az Function Test",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#CCCCCC",
+  "icon": "globe",
+  "unpublishedAppLayout": {
+    "type": "DESKTOP"
+  },
+  "publishedAppLayout": {
+    "type": "DESKTOP"
+  },
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "isManualUpdate": false,
+  "deleted": false
+}

@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "ReverseEcho",
+    "pageId": "Az Function Test",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tisSubmitting: () => appsmith.store.isSubmitting,\n\tlastEcho: () => appsmith.store.lastEcho,\n\tlastMsg: () => appsmith.store.lastMsg,\n\t\n\tinitState: () => {\n\t\tstoreValue('isSubmitting', false, false);\n\t},\n\t\n\tgetEcho: async () => {\n\t\tconst msg = ReverseInput.text;\n\t\tif (!msg || ReverseEcho.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('isSubmitting', true, false);\n\t\t\tconst response = await GET_ReverseEcho.run({msg});\n\t\t\t\n\t\t\tawait storeValue('lastMsg', msg);\n\t\t\tawait storeValue('lastEcho', response);\n\t\t} finally {\n\t\t\tawait storeValue('isSubmitting', false, false);\n\t\t}\n\t}\n}",
+    "variables": []
+  },
+  "id": "Az Function Test_ReverseEcho",
+  "deleted": false,
+  "gitSyncId": "62bb1fd10d629f38792c20a0_62bc73a10d629f38792c214a"
+}
