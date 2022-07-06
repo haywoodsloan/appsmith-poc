@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n\t\t// Passing the id from the delete button causes errors \n\t\t// if there's certain characters in the currentItem's name\n\t\t// workaround is to use the selectedItem instead\n\t\tconst id = TodoList.selectedItem.id;\n\t\tDELETE_Todo.run(() => GET_Todos.run(), () => {}, {id});\n\t}",
+      "body": "() => {\n  const id = TodoList.selectedItem.id;\n  DELETE_Todo.run(() => GET_Todos.run(), () => {}, {\n    id\n  });\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n\t\t// Passing the id from the delete button causes errors \n\t\t// if there's certain characters in the currentItem's name\n\t\t// workaround is to use the selectedItem instead\n\t\tconst id = TodoList.selectedItem.id;\n\t\tDELETE_Todo.run(() => GET_Todos.run(), () => {}, {id});\n\t}"
+      "() => {\n  const id = TodoList.selectedItem.id;\n  DELETE_Todo.run(() => GET_Todos.run(), () => {}, {\n    id\n  });\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

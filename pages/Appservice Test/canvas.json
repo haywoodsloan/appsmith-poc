@@ -816,7 +816,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "() => {\n\t\tstoreValue('todoSubmitting', false, false);\n\t}"
+                "() => {\n  storeValue('todoSubmitting', false, false);\n}"
               ],
               "timeoutInMillisecond": 10000
             }

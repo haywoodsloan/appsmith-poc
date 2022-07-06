@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n\t\tconst name = NewTodoInput.text;\n\t\tif (!name || Todos.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('todoSubmitting', true, false);\n\t\t\tawait POST_Todo.run({name});\n\t\t\t\n\t\t\tawait resetWidget('NewTodoInput');\n\t\t\tawait GET_Todos.run();\n\t\t} finally {\n\t\t\tawait storeValue('todoSubmitting', false, false);\n\t\t}\n\t}",
+      "body": "async () => {\n  const name = NewTodoInput.text;\n  if (!name || Todos.isSubmitting()) {\n    return;\n  }\n  try {\n    await storeValue('todoSubmitting', true, false);\n    await POST_Todo.run({\n      name\n    });\n    await resetWidget('NewTodoInput');\n    await GET_Todos.run();\n  } finally {\n    await storeValue('todoSubmitting', false, false);\n  }\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n\t\tconst name = NewTodoInput.text;\n\t\tif (!name || Todos.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('todoSubmitting', true, false);\n\t\t\tawait POST_Todo.run({name});\n\t\t\t\n\t\t\tawait resetWidget('NewTodoInput');\n\t\t\tawait GET_Todos.run();\n\t\t} finally {\n\t\t\tawait storeValue('todoSubmitting', false, false);\n\t\t}\n\t}"
+      "async () => {\n  const name = NewTodoInput.text;\n  if (!name || Todos.isSubmitting()) {\n    return;\n  }\n  try {\n    await storeValue('todoSubmitting', true, false);\n    await POST_Todo.run({\n      name\n    });\n    await resetWidget('NewTodoInput');\n    await GET_Todos.run();\n  } finally {\n    await storeValue('todoSubmitting', false, false);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n\t\tstoreValue('isSubmitting', false, false);\n\t}",
+      "body": "() => {\n  storeValue('isSubmitting', false, false);\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n\t\tstoreValue('isSubmitting', false, false);\n\t}"
+      "() => {\n  storeValue('isSubmitting', false, false);\n}"
     ],
     "userSetOnLoad": true,
     "confirmBeforeExecute": false,

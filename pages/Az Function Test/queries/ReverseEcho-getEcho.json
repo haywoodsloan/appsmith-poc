@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n\t\tconst msg = ReverseInput.text;\n\t\tif (!msg || ReverseEcho.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('isSubmitting', true, false);\n\t\t\tconst response = await GET_ReverseEcho.run({msg});\n\t\t\t\n\t\t\tawait storeValue('lastMsg', msg);\n\t\t\tawait storeValue('lastEcho', response);\n\t\t} finally {\n\t\t\tawait storeValue('isSubmitting', false, false);\n\t\t}\n\t}",
+      "body": "async () => {\n  const msg = ReverseInput.text;\n  if (!msg || ReverseEcho.isSubmitting()) {\n    return;\n  }\n  try {\n    await storeValue('isSubmitting', true, false);\n    const response = await GET_ReverseEcho.run({\n      msg\n    });\n    await storeValue('lastMsg', msg);\n    await storeValue('lastEcho', response);\n  } finally {\n    await storeValue('isSubmitting', false, false);\n  }\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n\t\tconst msg = ReverseInput.text;\n\t\tif (!msg || ReverseEcho.isSubmitting()){\n\t\t\treturn;\n\t\t}\n\t\t\n\t\ttry {\n\t\t\tawait storeValue('isSubmitting', true, false);\n\t\t\tconst response = await GET_ReverseEcho.run({msg});\n\t\t\t\n\t\t\tawait storeValue('lastMsg', msg);\n\t\t\tawait storeValue('lastEcho', response);\n\t\t} finally {\n\t\t\tawait storeValue('isSubmitting', false, false);\n\t\t}\n\t}"
+      "async () => {\n  const msg = ReverseInput.text;\n  if (!msg || ReverseEcho.isSubmitting()) {\n    return;\n  }\n  try {\n    await storeValue('isSubmitting', true, false);\n    const response = await GET_ReverseEcho.run({\n      msg\n    });\n    await storeValue('lastMsg', msg);\n    await storeValue('lastEcho', response);\n  } finally {\n    await storeValue('isSubmitting', false, false);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
