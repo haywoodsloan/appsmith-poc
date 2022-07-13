@@ -801,6 +801,7 @@
                       "dynamicPropertyPathList": [],
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "onSubmit": "",
                       "searchTags": [
                         "form",
                         "text input",
@@ -819,6 +820,9 @@
                       "dynamicTriggerPathList": [
                         {
                           "key": "onTextChanged"
+                        },
+                        {
+                          "key": "onSubmit"
                         }
                       ],
                       "resetOnSubmit": true,

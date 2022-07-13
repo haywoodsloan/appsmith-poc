@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "setLicenseCount",
-    "fullyQualifiedName": "Customers.setLicenseCount",
+    "name": "validateConfigs",
+    "fullyQualifiedName": "Customers.validateConfigs",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,8 +19,12 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  Customers.updateConfig(mutable);\n}",
-      "jsArguments": [],
+      "body": "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount));\n}",
+      "jsArguments": [
+        {
+          "name": "...configs"
+        }
+      ],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -33,14 +37,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  Customers.updateConfig(mutable);\n}"
+      "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount));\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.setLicenseCount",
+  "id": "Product Key Mock_Customers.validateConfigs",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf1d452f6d3c2d44eca4cb"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf2ddd2f6d3c2d44eca4df"
 }

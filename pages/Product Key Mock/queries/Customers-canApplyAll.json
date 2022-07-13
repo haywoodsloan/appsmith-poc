@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  const originals = Customers.selectedCustomer()?.configs;\n  if (!mutable || !originals) {\n    return false;\n  }\n  return originals.some(config => !Customers.compareConfigs(mutable, config));\n}",
+      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  const originals = Customers.selectedCustomer()?.configs;\n  if (!originals || !Customers.validateConfigs(mutable)) {\n    return false;\n  }\n  return originals.some(config => !Customers.compareConfigs(mutable, config));\n}",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  const mutable = Customers.mutableConfig();\n  const originals = Customers.selectedCustomer()?.configs;\n  if (!mutable || !originals) {\n    return false;\n  }\n  return originals.some(config => !Customers.compareConfigs(mutable, config));\n}"
+      "() => {\n  const mutable = Customers.mutableConfig();\n  const originals = Customers.selectedCustomer()?.configs;\n  if (!originals || !Customers.validateConfigs(mutable)) {\n    return false;\n  }\n  return originals.some(config => !Customers.compareConfigs(mutable, config));\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

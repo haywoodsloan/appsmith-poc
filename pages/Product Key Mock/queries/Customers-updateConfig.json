@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    await storeValue('mutableConfigs', configs, false);\n  }\n}",
+      "body": "mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    storeValue('mutableConfigs', configs, false);\n  }\n}",
       "jsArguments": [
         {
           "name": "config"
@@ -39,7 +39,7 @@
           "name": "mutable.databaseName"
         }
       ],
-      "isAsync": true
+      "isAsync": false
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
@@ -51,7 +51,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    await storeValue('mutableConfigs', configs, false);\n  }\n}"
+      "mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    storeValue('mutableConfigs', configs, false);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

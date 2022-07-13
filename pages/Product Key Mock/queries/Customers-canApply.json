@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  const original = Customers.originalConfig();\n  if (!mutable || !original) {\n    return false;\n  }\n  return !Customers.compareConfigs(mutable, original);\n}",
+      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  const original = Customers.originalConfig();\n  if (!original || !Customers.validateConfigs(mutable)) {\n    return false;\n  }\n  return !Customers.compareConfigs(mutable, original);\n}",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  const mutable = Customers.mutableConfig();\n  const original = Customers.originalConfig();\n  if (!mutable || !original) {\n    return false;\n  }\n  return !Customers.compareConfigs(mutable, original);\n}"
+      "() => {\n  const mutable = Customers.mutableConfig();\n  const original = Customers.originalConfig();\n  if (!original || !Customers.validateConfigs(mutable)) {\n    return false;\n  }\n  return !Customers.compareConfigs(mutable, original);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
