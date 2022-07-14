@@ -955,12 +955,12 @@
                           "borderWidth": "",
                           "backgroundColor": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'transparent';\n              })();\n            })}}"
                         },
-                        "IconButton1": {
+                        "AddedIcon": {
                           "isVisible": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  Customers.isFeatureChanged(currentItem);\n              })();\n            })}}",
                           "iconName": "plus",
                           "buttonVariant": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'SECONDARY';\n              })();\n            })}}",
                           "isDisabled": false,
-                          "widgetName": "IconButton1",
+                          "widgetName": "AddedIcon",
                           "version": 1,
                           "animateLoading": true,
                           "searchTags": [
@@ -1089,13 +1089,13 @@
                           "key": "isVisible"
                         },
                         {
-                          "key": "template.IconButton1.borderRadius"
+                          "key": "template.AddedIcon.borderRadius"
                         },
                         {
-                          "key": "template.IconButton1.isVisible"
+                          "key": "template.AddedIcon.isVisible"
                         },
                         {
-                          "key": "template.IconButton1.buttonVariant"
+                          "key": "template.AddedIcon.buttonVariant"
                         }
                       ],
                       "gridType": "vertical",
@@ -1278,7 +1278,7 @@
                                     },
                                     {
                                       "boxShadow": "none",
-                                      "widgetName": "IconButton1",
+                                      "widgetName": "AddedIcon",
                                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                                       "dynamicPropertyPathList": [
                                         {
@@ -1403,7 +1403,7 @@
                       ],
                       "privateWidgets": {
                         "AssignedFeatureLabel": true,
-                        "IconButton1": true
+                        "AddedIcon": true
                       },
                       "key": "q7okpfv78f",
                       "backgroundColor": "transparent",
@@ -1510,12 +1510,12 @@
                           "dynamicTriggerPathList": [],
                           "backgroundColor": "{{AvailableList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'transparent';\n              })();\n            })}}"
                         },
-                        "IconButton1Copy": {
+                        "RemovedIcon": {
                           "isVisible": "{{AvailableList.listData.map((currentItem) => Customers.isFeatureChanged(currentItem))}}",
                           "iconName": "{{AvailableList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'minus';\n              })();\n            })}}",
                           "buttonVariant": "SECONDARY",
                           "isDisabled": false,
-                          "widgetName": "IconButton1Copy",
+                          "widgetName": "RemovedIcon",
                           "version": 1,
                           "animateLoading": true,
                           "searchTags": [
@@ -1641,13 +1641,13 @@
                           "key": "isVisible"
                         },
                         {
-                          "key": "template.IconButton1Copy.isVisible"
+                          "key": "template.RemovedIcon.isVisible"
                         },
                         {
-                          "key": "template.IconButton1Copy.iconName"
+                          "key": "template.RemovedIcon.iconName"
                         },
                         {
-                          "key": "template.IconButton1Copy.buttonColor"
+                          "key": "template.RemovedIcon.buttonColor"
                         }
                       ],
                       "gridType": "vertical",
@@ -1733,7 +1733,7 @@
                                   "children": [
                                     {
                                       "boxShadow": "none",
-                                      "widgetName": "IconButton1Copy",
+                                      "widgetName": "RemovedIcon",
                                       "buttonColor": "#dc2626",
                                       "dynamicPropertyPathList": [
                                         {
@@ -1948,7 +1948,7 @@
                         }
                       ],
                       "privateWidgets": {
-                        "IconButton1Copy": true,
+                        "RemovedIcon": true,
                         "AvailableFeatureLabel": true
                       },
                       "key": "q7okpfv78f",
