@@ -611,6 +611,7 @@
                     {
                       "boxShadow": "none",
                       "widgetName": "UpdateAllBtn",
+                      "onClick": "{{Customers.applyToAll()}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "dynamicPropertyPathList": [
                         {
@@ -630,7 +631,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "parentColumnSpace": 10.83203125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
                       "leftColumn": 38,
                       "dynamicBindingPathList": [
                         {
@@ -641,7 +646,7 @@
                         }
                       ],
                       "text": "Apply to All",
-                      "isDisabled": "{{!Customers.canApplyAll()}}",
+                      "isDisabled": "{{!Customers.canApplyAll() || Customers.isApplying()}}",
                       "key": "07ho9ie8im",
                       "isDeprecated": false,
                       "rightColumn": 48,
@@ -1031,7 +1036,7 @@
                       },
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
                       "widgetName": "AssignedList",
-                      "listData": "{{Customers.assignedFeatures().sort()}}",
+                      "listData": "{{Customers.assignedFeatures()}}",
                       "isCanvas": true,
                       "dynamicPropertyPathList": [
                         {
@@ -1592,7 +1597,7 @@
                       },
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
                       "widgetName": "AvailableList",
-                      "listData": "{{Customers.availableFeatures().sort()}}",
+                      "listData": "{{Customers.availableFeatures()}}",
                       "isCanvas": true,
                       "dynamicPropertyPathList": [
                         {
@@ -2056,6 +2061,7 @@
                     {
                       "boxShadow": "none",
                       "widgetName": "UpdateBtn",
+                      "onClick": "{{Customers.apply()}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "dynamicPropertyPathList": [
                         {
@@ -2075,7 +2081,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "parentColumnSpace": 10.83203125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
                       "leftColumn": 32,
                       "dynamicBindingPathList": [
                         {
@@ -2086,7 +2096,7 @@
                         }
                       ],
                       "text": "Apply",
-                      "isDisabled": "{{!Customers.canApply()}}",
+                      "isDisabled": "{{!Customers.canApply() || Customers.isApplying()}}",
                       "key": "07ho9ie8im",
                       "isDeprecated": false,
                       "rightColumn": 38,
@@ -2143,7 +2153,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}"
+                "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n  storeValue('isApplying', 0, false);\n}"
               ],
               "timeoutInMillisecond": 10000
             },

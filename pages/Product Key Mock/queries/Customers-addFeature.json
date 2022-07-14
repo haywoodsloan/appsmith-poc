@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features.push(featureValue);\n  console.log(featureValue, mutable);\n  await Customers.updateConfig(mutable);\n}",
+      "body": "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features.push(featureValue);\n  await Customers.updateConfig(mutable);\n}",
       "jsArguments": [
         {}
       ],
@@ -35,7 +35,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features.push(featureValue);\n  console.log(featureValue, mutable);\n  await Customers.updateConfig(mutable);\n}"
+      "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features.push(featureValue);\n  await Customers.updateConfig(mutable);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

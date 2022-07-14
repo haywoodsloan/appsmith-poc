@@ -20,9 +20,7 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "featureValue => {\n  const feature = Feature_Info.data.find(fet => fet.value === featureValue);\n  const description = feature?.description ?? 'Unknown Feature';\n  return `(${featureValue}) ${description}`;\n}",
-      "jsArguments": [
-        {}
-      ],
+      "jsArguments": [],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -44,5 +42,5 @@
   },
   "id": "Product Key Mock_Customers.getFeatureLabel",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf11d42f6d3c2d44eca4b6"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d07e3158b0131ed455505f"
 }

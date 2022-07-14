@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value)",
+      "body": "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value).sort()",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value)"
+      "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value).sort()"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
