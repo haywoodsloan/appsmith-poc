@@ -19,12 +19,8 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount));\n}",
-      "jsArguments": [
-        {
-          "name": "...configs"
-        }
-      ],
+      "body": "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount) && Array.isArray(config.features));\n}",
+      "jsArguments": [],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -37,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount));\n}"
+      "(...configs) => {\n  return configs.every(config => !!config && !isNaN(config.licenseCount) && Array.isArray(config.features));\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
