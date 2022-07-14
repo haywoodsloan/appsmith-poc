@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "assignedFeatures",
-    "fullyQualifiedName": "Customers.assignedFeatures",
+    "name": "removeFeature",
+    "fullyQualifiedName": "Customers.removeFeature",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,9 +19,11 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => Customers.mutableConfig().features.sort()",
-      "jsArguments": [],
-      "isAsync": false
+      "body": "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features = mutable.features.filter(fet => fet !== featureValue);\n  Customers.updateConfig(mutable);\n}",
+      "jsArguments": [
+        {}
+      ],
+      "isAsync": true
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
@@ -33,14 +35,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => Customers.mutableConfig().features.sort()"
+      "async featureValue => {\n  const mutable = Customers.mutableConfig();\n  mutable.features = mutable.features.filter(fet => fet !== featureValue);\n  Customers.updateConfig(mutable);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.assignedFeatures",
+  "id": "Product Key Mock_Customers.removeFeature",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62d05682d0761c523dd8412b"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d067d558b0131ed4555045"
 }

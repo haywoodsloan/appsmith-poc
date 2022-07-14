@@ -943,7 +943,7 @@
                           },
                           "isVisible": true,
                           "fontStyle": "BOLD",
-                          "textColor": "#231F20",
+                          "textColor": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  Customers.isFeatureChanged(currentItem) ? '#16a34a' : '#231F20';\n              })();\n            })}}",
                           "version": 1,
                           "parentId": "oh3ntfff5o",
                           "renderMode": "CANVAS",
@@ -968,9 +968,13 @@
                       "type": "LIST_WIDGET",
                       "hideCard": false,
                       "gridGap": "",
-                      "animateLoading": false,
+                      "animateLoading": true,
                       "parentColumnSpace": 10.83203125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onListItemClick"
+                        }
+                      ],
                       "leftColumn": 0,
                       "dynamicBindingPathList": [
                         {
@@ -986,9 +990,6 @@
                           "key": "template.Container1.borderWidth"
                         },
                         {
-                          "key": "template.Container1.backgroundColor"
-                        },
-                        {
                           "key": "template.AssignedFeatureLabel.text"
                         },
                         {
@@ -999,6 +1000,12 @@
                         },
                         {
                           "key": "template.Container1.borderColor"
+                        },
+                        {
+                          "key": "template.Container1.backgroundColor"
+                        },
+                        {
+                          "key": "template.AssignedFeatureLabel.textColor"
                         }
                       ],
                       "gridType": "vertical",
@@ -1086,6 +1093,11 @@
                                     {
                                       "widgetName": "AssignedFeatureLabel",
                                       "borderColor": "",
+                                      "dynamicPropertyPathList": [
+                                        {
+                                          "key": "textColor"
+                                        }
+                                      ],
                                       "displayName": "Text",
                                       "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
                                       "searchTags": [
@@ -1112,6 +1124,9 @@
                                         },
                                         {
                                           "key": "text"
+                                        },
+                                        {
+                                          "key": "textColor"
                                         }
                                       ],
                                       "shouldTruncate": false,
@@ -1163,7 +1178,7 @@
                                       },
                                       "isVisible": true,
                                       "fontStyle": "BOLD",
-                                      "textColor": "#231F20",
+                                      "textColor": "{{Customers.isFeatureChanged(currentItem) ? '#16a34a' : '#231F20'}}",
                                       "version": 1,
                                       "parentId": "oh3ntfff5o",
                                       "renderMode": "CANVAS",
@@ -1224,6 +1239,7 @@
                       "backgroundColor": "transparent",
                       "isDeprecated": false,
                       "rightColumn": 24,
+                      "onListItemClick": "{{Customers.removeFeature(currentItem)}}",
                       "itemBackgroundColor": "#fff",
                       "widgetId": "41zm4ie58d",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -1314,14 +1330,15 @@
                           },
                           "isVisible": true,
                           "fontStyle": "BOLD",
-                          "textColor": "#231F20",
+                          "textColor": "{{AvailableList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  Customers.isFeatureChanged(currentItem) ? '#dc2626' : '#231F20';\n              })();\n            })}}",
                           "version": 1,
                           "parentId": "5ajthgvlfz",
                           "renderMode": "CANVAS",
                           "isLoading": false,
                           "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                           "fontSize": "1rem",
-                          "dynamicTriggerPathList": []
+                          "dynamicTriggerPathList": [],
+                          "backgroundColor": "{{AvailableList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'transparent';\n              })();\n            })}}"
                         }
                       },
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -1336,9 +1353,13 @@
                       "type": "LIST_WIDGET",
                       "hideCard": false,
                       "gridGap": 0,
-                      "animateLoading": false,
+                      "animateLoading": true,
                       "parentColumnSpace": 10.83203125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onListItemClick"
+                        }
+                      ],
                       "leftColumn": 26,
                       "dynamicBindingPathList": [
                         {
@@ -1355,6 +1376,12 @@
                         },
                         {
                           "key": "boxShadow"
+                        },
+                        {
+                          "key": "template.AvailableFeatureLabel.backgroundColor"
+                        },
+                        {
+                          "key": "template.AvailableFeatureLabel.textColor"
                         }
                       ],
                       "gridType": "vertical",
@@ -1440,6 +1467,11 @@
                                   "children": [
                                     {
                                       "widgetName": "AvailableFeatureLabel",
+                                      "dynamicPropertyPathList": [
+                                        {
+                                          "key": "textColor"
+                                        }
+                                      ],
                                       "displayName": "Text",
                                       "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
                                       "searchTags": [
@@ -1466,6 +1498,9 @@
                                         },
                                         {
                                           "key": "text"
+                                        },
+                                        {
+                                          "key": "textColor"
                                         }
                                       ],
                                       "shouldTruncate": false,
@@ -1474,6 +1509,7 @@
                                       "key": "3xq0m846hw",
                                       "isDeprecated": false,
                                       "rightColumn": 64,
+                                      "backgroundColor": "transparent",
                                       "textAlign": "LEFT",
                                       "widgetId": "o0ktdhga6w",
                                       "logBlackList": {
@@ -1515,7 +1551,7 @@
                                       },
                                       "isVisible": true,
                                       "fontStyle": "BOLD",
-                                      "textColor": "#231F20",
+                                      "textColor": "{{Customers.isFeatureChanged(currentItem) ? '#dc2626' : '#231F20'}}",
                                       "version": 1,
                                       "parentId": "5ajthgvlfz",
                                       "renderMode": "CANVAS",
@@ -1576,6 +1612,7 @@
                       "backgroundColor": "transparent",
                       "isDeprecated": false,
                       "rightColumn": 50,
+                      "onListItemClick": "{{Customers.addFeature(currentItem)}}",
                       "itemBackgroundColor": "#fff",
                       "widgetId": "wkdh37fn0q",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",

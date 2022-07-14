@@ -16,7 +16,7 @@
     "pageId": "Product Key Mock",
     "collectionId": "Product Key Mock_Customers",
     "actionConfiguration": {
-      "timeoutInMillisecond": 0,
+      "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "featureValue => {\n  const inMutable = Customers.mutableConfig()?.features?.includes(featureValue);\n  const inOriginal = Customers.originalConfig()?.features?.includes(featureValue);\n  return inMutable !== inOriginal;\n}",
