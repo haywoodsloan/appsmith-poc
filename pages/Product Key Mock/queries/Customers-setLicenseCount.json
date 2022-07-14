@@ -19,9 +19,9 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  Customers.updateConfig(mutable);\n}",
+      "body": "async () => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  await Customers.updateConfig(mutable);\n}",
       "jsArguments": [],
-      "isAsync": false
+      "isAsync": true
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  Customers.updateConfig(mutable);\n}"
+      "async () => {\n  const mutable = Customers.mutableConfig();\n  mutable.licenseCount = parseInt(LicenseCountInput.text);\n  await Customers.updateConfig(mutable);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

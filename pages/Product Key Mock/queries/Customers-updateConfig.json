@@ -19,27 +19,11 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    storeValue('mutableConfigs', configs, false);\n  }\n}",
+      "body": "async mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = mutable;\n    await storeValue('mutableConfigs', configs, false);\n  }\n}",
       "jsArguments": [
-        {
-          "name": "config"
-        },
-        {
-          "name": "",
-          "value": ">"
-        },
-        {
-          "name": "config.databaseName"
-        },
-        {
-          "name": "",
-          "value": ""
-        },
-        {
-          "name": "mutable.databaseName"
-        }
+        {}
       ],
-      "isAsync": false
+      "isAsync": true
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
@@ -51,7 +35,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = {\n      ...configs[idx],\n      ...mutable\n    };\n    storeValue('mutableConfigs', configs, false);\n  }\n}"
+      "async mutable => {\n  const configs = appsmith.store.mutableConfigs;\n  const idx = configs.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    configs[idx] = mutable;\n    await storeValue('mutableConfigs', configs, false);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
@@ -60,5 +44,5 @@
   },
   "id": "Product Key Mock_Customers.updateConfig",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf1f1a2f6d3c2d44eca4ce"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d072ce58b0131ed4555050"
 }
