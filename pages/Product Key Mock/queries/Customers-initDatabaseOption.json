@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "initState",
-    "fullyQualifiedName": "Customers.initState",
+    "name": "initDatabaseOption",
+    "fullyQualifiedName": "Customers.initDatabaseOption",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,11 +19,11 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}",
+      "body": "() => Customers.selectedCustomer()?.configs[0]?.databaseName ?? ''",
       "jsArguments": [],
-      "isAsync": true
+      "isAsync": false
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -33,14 +33,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}"
+      "() => Customers.selectedCustomer()?.configs[0]?.databaseName ?? ''"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.initState",
+  "id": "Product Key Mock_Customers.initDatabaseOption",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62ceff982f6d3c2d44eca4a1"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf18a02f6d3c2d44eca4be"
 }

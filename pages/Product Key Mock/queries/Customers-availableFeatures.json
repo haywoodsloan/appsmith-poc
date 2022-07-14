@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getFeatureDescription",
-    "fullyQualifiedName": "Customers.getFeatureDescription",
+    "name": "availableFeatures",
+    "fullyQualifiedName": "Customers.availableFeatures",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "featureName => {\n  const feature = Feature_Info.data.find(fet => fet.value === featureName);\n  return feature?.description ?? 'Unknown Feature';\n}",
+      "body": "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value)",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,14 +33,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "featureName => {\n  const feature = Feature_Info.data.find(fet => fet.value === featureName);\n  return feature?.description ?? 'Unknown Feature';\n}"
+      "() => Feature_Info.data.filter(fet => !Customers.assignedFeatures().includes(fet.value)).map(fet => fet.value)"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.getFeatureDescription",
+  "id": "Product Key Mock_Customers.availableFeatures",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62cf11d42f6d3c2d44eca4b6"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d056e7d0761c523dd8412d"
 }

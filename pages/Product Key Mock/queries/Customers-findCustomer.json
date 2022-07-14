@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  const customerId = CustomerIdInput.text;\n  if (!customerId || Customers.isFinding()) {\n    return;\n  }\n  try {\n    await storeValue('isFinding', true, false);\n    await storeValue('selectedCustomer', undefined, false);\n    await storeValue('mutableConfigs', undefined, false);\n    const response = await Customer_Info.run({\n      customerId\n    });\n    await storeValue('selectedCustomer', response, false);\n    await storeValue('mutableConfigs', response.configs, false);\n  } finally {\n    await storeValue('isFinding', false, false);\n  }\n}",
+      "body": "async () => {\n  const customerId = CustomerIdInput.text;\n  if (!customerId || Customers.isFinding()) {\n    return;\n  }\n  try {\n    await storeValue('isFinding', true, false);\n    await storeValue('selectedCustomer', undefined, false);\n    await storeValue('mutableConfigs', undefined, false);\n    await storeValue('initLicenseCount', 0, false);\n    const response = await Customer_Info.run({\n      customerId\n    });\n    await storeValue('selectedCustomer', response, false);\n    await storeValue('mutableConfigs', response.configs, false);\n    await storeValue('initLicenseCount', response.configs[0]?.licenseCount, false);\n  } finally {\n    await storeValue('isFinding', false, false);\n  }\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  const customerId = CustomerIdInput.text;\n  if (!customerId || Customers.isFinding()) {\n    return;\n  }\n  try {\n    await storeValue('isFinding', true, false);\n    await storeValue('selectedCustomer', undefined, false);\n    await storeValue('mutableConfigs', undefined, false);\n    const response = await Customer_Info.run({\n      customerId\n    });\n    await storeValue('selectedCustomer', response, false);\n    await storeValue('mutableConfigs', response.configs, false);\n  } finally {\n    await storeValue('isFinding', false, false);\n  }\n}"
+      "async () => {\n  const customerId = CustomerIdInput.text;\n  if (!customerId || Customers.isFinding()) {\n    return;\n  }\n  try {\n    await storeValue('isFinding', true, false);\n    await storeValue('selectedCustomer', undefined, false);\n    await storeValue('mutableConfigs', undefined, false);\n    await storeValue('initLicenseCount', 0, false);\n    const response = await Customer_Info.run({\n      customerId\n    });\n    await storeValue('selectedCustomer', response, false);\n    await storeValue('mutableConfigs', response.configs, false);\n    await storeValue('initLicenseCount', response.configs[0]?.licenseCount, false);\n  } finally {\n    await storeValue('isFinding', false, false);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

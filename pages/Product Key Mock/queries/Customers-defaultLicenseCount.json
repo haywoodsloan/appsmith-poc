@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "initState",
-    "fullyQualifiedName": "Customers.initState",
+    "name": "defaultLicenseCount",
+    "fullyQualifiedName": "Customers.defaultLicenseCount",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -16,14 +16,14 @@
     "pageId": "Product Key Mock",
     "collectionId": "Product Key Mock_Customers",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}",
+      "body": "() => appsmith.store.defaultLicenseCount",
       "jsArguments": [],
-      "isAsync": true
+      "isAsync": false
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -33,14 +33,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}"
+      "() => appsmith.store.defaultLicenseCount"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.initState",
+  "id": "Product Key Mock_Customers.defaultLicenseCount",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62ceff982f6d3c2d44eca4a1"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d0503dd0761c523dd84124"
 }
