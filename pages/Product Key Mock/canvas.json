@@ -864,7 +864,8 @@
                           "borderColor": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'transparent';\n              })();\n            })}}",
                           "borderWidth": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  '0';\n              })();\n            })}}",
                           "backgroundColor": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'white';\n              })();\n            })}}",
-                          "borderRadius": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  appsmith.theme.borderRadius.appBorderRadius;\n              })();\n            })}}"
+                          "borderRadius": "{{AssignedList.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  appsmith.theme.borderRadius.appBorderRadius;\n              })();\n            })}}",
+                          "isVisible": true
                         },
                         "AssignedFeatureLabel": {
                           "widgetName": "AssignedFeatureLabel",
@@ -957,9 +958,13 @@
                       },
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
                       "widgetName": "AssignedList",
-                      "listData": "{{Customers.assignedFeatures()}}",
+                      "listData": "{{Customers.assignedFeatures().sort()}}",
                       "isCanvas": true,
-                      "dynamicPropertyPathList": [],
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
                       "displayName": "List",
                       "iconSVG": "/static/media/icon.9925ee17dee37bf1ba7374412563a8a7.svg",
                       "topRow": 13,
@@ -968,7 +973,7 @@
                       "type": "LIST_WIDGET",
                       "hideCard": false,
                       "gridGap": "",
-                      "animateLoading": true,
+                      "animateLoading": false,
                       "parentColumnSpace": 10.83203125,
                       "dynamicTriggerPathList": [
                         {
@@ -1006,6 +1011,9 @@
                         },
                         {
                           "key": "template.AssignedFeatureLabel.textColor"
+                        },
+                        {
+                          "key": "isVisible"
                         }
                       ],
                       "gridType": "vertical",
@@ -1243,7 +1251,7 @@
                       "itemBackgroundColor": "#fff",
                       "widgetId": "41zm4ie58d",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "isVisible": true,
+                      "isVisible": "{{Customers.assignedFeatures().length > 0}}",
                       "parentId": "lspnbuheet",
                       "renderMode": "CANVAS",
                       "isLoading": false,
@@ -1343,8 +1351,13 @@
                       },
                       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
                       "widgetName": "AvailableList",
-                      "listData": "{{Customers.availableFeatures()}}",
+                      "listData": "{{Customers.availableFeatures().sort()}}",
                       "isCanvas": true,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
                       "displayName": "List",
                       "iconSVG": "/static/media/icon.9925ee17dee37bf1ba7374412563a8a7.svg",
                       "topRow": 13,
@@ -1353,7 +1366,7 @@
                       "type": "LIST_WIDGET",
                       "hideCard": false,
                       "gridGap": 0,
-                      "animateLoading": true,
+                      "animateLoading": false,
                       "parentColumnSpace": 10.83203125,
                       "dynamicTriggerPathList": [
                         {
@@ -1382,6 +1395,9 @@
                         },
                         {
                           "key": "template.AvailableFeatureLabel.textColor"
+                        },
+                        {
+                          "key": "isVisible"
                         }
                       ],
                       "gridType": "vertical",
@@ -1616,7 +1632,7 @@
                       "itemBackgroundColor": "#fff",
                       "widgetId": "wkdh37fn0q",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "isVisible": true,
+                      "isVisible": "{{Customers.availableFeatures().length > 0}}",
                       "parentId": "lspnbuheet",
                       "renderMode": "CANVAS",
                       "isLoading": false,

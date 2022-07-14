@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => Customers.mutableConfig().features.sort()",
+      "body": "() => Customers.mutableConfig().features",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => Customers.mutableConfig().features.sort()"
+      "() => Customers.mutableConfig().features"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
