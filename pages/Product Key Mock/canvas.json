@@ -494,7 +494,7 @@
                         }
                       ],
                       "text": "Find",
-                      "isDisabled": "{{Customers.isFinding() || !CustomerIdInput.text.length}}",
+                      "isDisabled": "{{Customers.isFinding() || !CustomerIdInput.text}}",
                       "key": "s9l7mh8hw5",
                       "isDeprecated": false,
                       "rightColumn": 38,
@@ -589,7 +589,7 @@
                       "labelPosition": "Auto",
                       "labelStyle": "BOLD",
                       "labelTextColor": "transparent",
-                      "inputType": "TEXT",
+                      "inputType": "NUMBER",
                       "placeholderText": "Customer ID",
                       "isDisabled": "{{Customers.isFinding()}}",
                       "key": "b5a74g8nc7",
