@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "defaultLicenseCount",
-    "fullyQualifiedName": "Customers.defaultLicenseCount",
+    "name": "modalDiffDatabaseNames",
+    "fullyQualifiedName": "Customers.modalDiffDatabaseNames",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => appsmith.store.defaultLicenseCount",
+      "body": "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(\", \")}`",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,14 +33,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => appsmith.store.defaultLicenseCount"
+      "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(\", \")}`"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Product Key Mock_Customers.defaultLicenseCount",
+  "id": "Product Key Mock_Customers.modalDiffDatabaseNames",
   "deleted": false,
-  "gitSyncId": "62c5b2370fe6a229f29411bd_62d0503dd0761c523dd84124"
+  "gitSyncId": "62c5b2370fe6a229f29411bd_62d1aa2ac3365d755e7eb202"
 }

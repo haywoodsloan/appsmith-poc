@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  const customer = Customers.selectedCustomer();\n  const mutable = Customers.mutableConfig();\n  const idx = customer?.configs?.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    try {\n      customer.configs[idx] = mutable;\n      await storeValue('isApplying', true, false);\n      await Update_Customer.run({\n        customerId: customer.id,\n        customerInfo: customer\n      });\n      await storeValue('selectedCustomer', customer, false);\n    } finally {\n      await storeValue('isApplying', false, false);\n    }\n  }\n}",
+      "body": "async () => {\n  const customer = Customers.selectedCustomer();\n  const mutable = Customers.mutableConfig();\n  const idx = customer?.configs?.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    try {\n      customer.configs[idx] = mutable;\n      await storeValue('isApplying', true, false);\n      await Update_Customer.run({\n        customerId: customer.id,\n        customerInfo: customer\n      });\n      await storeValue('selectedCustomer', customer, false);\n      await closeModal('ConfirmModal');\n    } finally {\n      await storeValue('isApplying', false, false);\n    }\n  }\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  const customer = Customers.selectedCustomer();\n  const mutable = Customers.mutableConfig();\n  const idx = customer?.configs?.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    try {\n      customer.configs[idx] = mutable;\n      await storeValue('isApplying', true, false);\n      await Update_Customer.run({\n        customerId: customer.id,\n        customerInfo: customer\n      });\n      await storeValue('selectedCustomer', customer, false);\n    } finally {\n      await storeValue('isApplying', false, false);\n    }\n  }\n}"
+      "async () => {\n  const customer = Customers.selectedCustomer();\n  const mutable = Customers.mutableConfig();\n  const idx = customer?.configs?.findIndex(config => config.databaseName === mutable.databaseName);\n  if (idx >= 0) {\n    try {\n      customer.configs[idx] = mutable;\n      await storeValue('isApplying', true, false);\n      await Update_Customer.run({\n        customerId: customer.id,\n        customerInfo: customer\n      });\n      await storeValue('selectedCustomer', customer, false);\n      await closeModal('ConfirmModal');\n    } finally {\n      await storeValue('isApplying', false, false);\n    }\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
