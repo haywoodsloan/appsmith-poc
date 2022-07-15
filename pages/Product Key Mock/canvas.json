@@ -59,7 +59,7 @@
                   "canExtend": true,
                   "hideCard": true,
                   "shouldScrollContents": false,
-                  "minHeight": 296,
+                  "minHeight": 302,
                   "parentColumnSpace": 1,
                   "leftColumn": 0,
                   "dynamicBindingPathList": [
@@ -389,7 +389,7 @@
                 }
               ],
               "key": "t9he8bs7eo",
-              "height": 296,
+              "height": 302,
               "isDeprecated": false,
               "rightColumn": 62,
               "detachFromLayout": true,
@@ -2554,7 +2554,7 @@
                   "canExtend": true,
                   "hideCard": true,
                   "shouldScrollContents": false,
-                  "minHeight": 246,
+                  "minHeight": 252,
                   "parentColumnSpace": 1,
                   "leftColumn": 0,
                   "dynamicBindingPathList": [
@@ -2884,7 +2884,7 @@
                 }
               ],
               "key": "t9he8bs7eo",
-              "height": 246,
+              "height": 252,
               "isDeprecated": false,
               "rightColumn": 62,
               "detachFromLayout": true,
