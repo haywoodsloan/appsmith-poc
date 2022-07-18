@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  storeValue('isApplying', false, false);\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}",
+      "body": "async () => {\n  await Promise.all([storeValue('isApplying', false, false), storeValue('isFinding', false, false), storeValue('initDatabaseOption', '', false), storeValue('initLicenseCount', 0, false), storeValue('selectedCustomer', undefined, false), storeValue('mutableConfigs', undefined, false)]);\n}",
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  storeValue('isApplying', false, false);\n  storeValue('isFinding', false, false);\n  storeValue('selectedCustomer', undefined, false);\n  storeValue('mutableConfigs', undefined, false);\n  storeValue('initLicenseCount', 0, false);\n}"
+      "async () => {\n  await Promise.all([storeValue('isApplying', false, false), storeValue('isFinding', false, false), storeValue('initDatabaseOption', '', false), storeValue('initLicenseCount', 0, false), storeValue('selectedCustomer', undefined, false), storeValue('mutableConfigs', undefined, false)]);\n}"
     ],
     "userSetOnLoad": true,
     "confirmBeforeExecute": false,

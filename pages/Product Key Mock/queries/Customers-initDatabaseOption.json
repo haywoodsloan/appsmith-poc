@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => Customers.selectedCustomer()?.configs[0]?.databaseName ?? ''",
+      "body": "() => appsmith.store.initDatabaseOption",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => Customers.selectedCustomer()?.configs[0]?.databaseName ?? ''"
+      "() => appsmith.store.initDatabaseOption"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(\", \")}`",
+      "body": "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(', ')}`",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(\", \")}`"
+      "() => `• Databases: ${Customers.selectedCustomer()?.configs.filter(config => !Customers.compareConfigs(config, Customers.mutableConfig())).map(config => config.databaseName).join(', ')}`"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
